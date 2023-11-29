@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="cart-container">
+        <img src="{{ url_for('static', filename='images/icon3.png') }}" alt="Cart Icon" class="cart-icon">
+        <div class="cart-count" id="cartCount">0</div>
+        <script>// Function to update cart count
+          function updateCartCount(count) {
+            const cartCount = document.getElementById('cartCount');
+            cartCount.textContent = count;
+          }
+          
+          // Example usage (increase count by 1)
+          let itemCount = 0;
+          document.querySelector('.cart-icon').addEventListener('click', function () {
+            itemCount++;
+            updateCartCount(itemCount);
+          });</script>
+      </div>
+      </div>
+      <div class="logo">
+        <img src="{{ url_for('static', filename='images/Mohamed.png') }}" alt="Mohamed Elbadry" />
+      </div>
+      <div>
+        <ul class="nav-links">
+          <li> <a href="/">Home</a>
+            <li><a href="/portfolio">Portfolio</a></li>
+            <li><a href="/">About</a></li>
+            <li><a href="/">Blog</a></li>
+            <li><a href="/">Contact me</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+<body>
+    <h1 class="confirmation-header">Thank You, {{ name }}!</h1>
+    <p class="confirmation-text">Your message has been submitted successfully. We'll get back to you soon.</p>
+</body>
+</html>
+<footer>
+      
+      <p>Copyright &#169; 2023 Mohamed Elbadry. All Rights Reserved.</p>
+    </footer>
+    </html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="cart-container">
+        <img src="{{ url_for('static', filename='images/icon3.png') }}" alt="Cart Icon" class="cart-icon">
+        <div class="cart-count" id="cartCount">0</div>
+        <script>// Function to update cart count
+          function updateCartCount(count) {
+            const cartCount = document.getElementById('cartCount');
+            cartCount.textContent = count;
+          }
+          
+          // Example usage (increase count by 1)
+          let itemCount = 0;
+          document.querySelector('.cart-icon').addEventListener('click', function () {
+            itemCount++;
+            updateCartCount(itemCount);
+          });</script>
+      </div>
+      </div>
+      <div class="logo">
+        <img src="{{ url_for('static', filename='images/Mohamed.png') }}" alt="Mohamed Elbadry" />
+      </div>
+      <div>
+        <ul class="nav-links">
+            <li> <a href="/">Home</a>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/">About</a></li>
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/">Contact me</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+  </div>
+      
+
+<section id="portfolio">
+    <p class="section__text__p1">Check Best of my ART!</p>
+    <h1 class="title">Portfolio</h1>
+    <main class="grid">
+      <img src="{{ url_for('static', filename='images/pic1.jpg') }}" alt="Mohamed Elbadry" />        
+      <img src="{{ url_for('static', filename='images/pic2.jpg') }}" alt="Mohamed Elbadry" />        
+      <img src="{{ url_for('static', filename='images/pic3.jpg') }}" alt="Mohamed Elbadry" />        
+      <img src="{{ url_for('static', filename='images/pic4.jpg') }}" alt="Mohamed Elbadry" />
+      <img src="{{ url_for('static', filename='images/pic5.jpg') }}" alt="Mohamed Elbadry" />
+      <img src="{{ url_for('static', filename='images/pic6.jpg') }}" alt="Mohamed Elbadry" />
+      <img src="{{ url_for('static', filename='images/pic7.jpg') }}" alt="Mohamed Elbadry" />        
+      <img src="{{ url_for('static', filename='images/pic8.jpg') }}" alt="Mohamed Elbadry" />        
+      <img src="{{ url_for('static', filename='images/pic9.jpg') }}" alt="Mohamed Elbadry" />        
+      <img src="{{ url_for('static', filename='images/pic10.jpg') }}" alt="Mohamed Elbadry" />
+      <img src="{{ url_for('static', filename='images/pic11.jpg') }}" alt="Mohamed Elbadry" />
+      <img src="{{ url_for('static', filename='images/pic12.jpg') }}" alt="Mohamed Elbadry" />
+    </main>
+
+  </section>
+ 
+
+
+</body>
+
+</html>

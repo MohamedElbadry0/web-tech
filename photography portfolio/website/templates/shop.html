@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="cart-container">
+        <img src="{{ url_for('static', filename='images/icon3.png') }}" alt="Cart Icon" class="cart-icon">
+        <div class="cart-count" id="cartCount">0</div>
+        <script>// Function to update cart count
+          function updateCartCount(count) {
+            const cartCount = document.getElementById('cartCount');
+            cartCount.textContent = count;
+          }
+          
+          // Example usage (increase count by 1)
+          let itemCount = 0;
+          document.querySelector('.cart-icon').addEventListener('click', function () {
+            itemCount++;
+            updateCartCount(itemCount);
+          });</script>
+      </div>
+      </div>
+      <div class="logo">
+        <img src="{{ url_for('static', filename='images/Mohamed.png') }}" alt="Mohamed Elbadry" />
+      </div>
+      <div>
+        <ul class="nav-links">
+          <li> <a href="/">Home</a>
+            <li><a href="/portfolio">Portfolio</a></li>
+            <li><a href="/">About</a></li>
+            <li><a href="/shop">Shop</a></li>
+            <li><a href="/">contact me</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+    <body>
+      <div class="wrapper">
+        <div class="product-img">
+          <img src="{{ url_for('static', filename='images/pic3.jpg') }}" alt="product" height="420" width="327">
+        </div>
+        <div class="product-info">
+          <div class="product-text">
+            <h1>Fairy tail print</h1>
+            <h2>by Mohamed Elbadry</h2>
+            <p>Fairy tail print<br> of the beautiful model<br> setting down in the castle grounds<br> holding a glass<br> full of sparks. </p>
+          </div>
+          <div class="product-price-btn">
+            <p><span>49</span>$</p>
+            <button type="button">Add to basket</button>
+          </div>
+        </div>
+      </div>
+    </body>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li> <a href="/">Home</a>
+              <li><a href="/portfolio">Portfolio</a></li>
+              <li><a href="/" onclick="toggleMenu()">About</a></li>
+            <li><a href="/" onclick="toggleMenu()">Blog</a></li>
+            <li><a href="/" onclick="toggleMenu()">Contact me</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2023 Mohamed Elbadry. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
+
+  </body>

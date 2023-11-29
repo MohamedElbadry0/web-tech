@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="cart-container">
+        <img src="{{ url_for('static', filename='images/icon3.png') }}" alt="Cart Icon" class="cart-icon">
+        <div class="cart-count" id="cartCount">0</div>
+        <script>// Function to update cart count
+          function updateCartCount(count) {
+            const cartCount = document.getElementById('cartCount');
+            cartCount.textContent = count;
+          }
+          
+          // Example usage (increase count by 1)
+          let itemCount = 0;
+          document.querySelector('.cart-icon').addEventListener('click', function () {
+            itemCount++;
+            updateCartCount(itemCount);
+          });</script>
+      </div>
+      </div>
+      <div class="logo">
+        <img src="{{ url_for('static', filename='images/Mohamed.png') }}" alt="Mohamed Elbadry" />
+      </div>
+      <div>
+        <ul class="nav-links">
+          <li> <a href="/">Home</a>
+            <li><a href="/portfolio">Portfolio</a></li>
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="/shop" onclick="toggleMenu()">Shop</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact me</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">
+        <img src="{{ url_for('static', filename='images/Mohamed.png') }}" alt="Mohamed Elbadry" />
+      </div>      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact me</a></li>
+        </div>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="{{ url_for('static', filename='images/ME.jpg') }}" alt="Mohamed Elbadry" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hey there!</p>
+        <h1 class="title">Mohamed ELbadry</h1>
+        <p class="section__text__p2">Best night photographer in Edinburgh</p>
+        <div class="btn-container">
+          <button class="btn btn-color-2" onclick="openPdf()">Download Packages list</button>
+
+          <script>
+            const pdfUrl = '/static/files/prices.pdf'; // Provide the correct URL here
+            
+            function openPdf() {
+                window.location.href = pdfUrl;
+            }
+        </script>
+        
+            Download Packages list
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact Me
+          </button>
+        </div>
+        <div id="socials-container">
+          <img
+              src="{{ url_for('static', filename='images/instagram.png') }}"
+              alt="My Instagram profile"
+              class="icon"
+              onclick="location.href='https://www.instagram.com/itselbadry/'"
+          />
+          <img
+              src="{{ url_for('static', filename='images/facebook.png') }}"
+              alt="My Facebook profile"
+              class="icon"
+              onclick="location.href='https://facebook.com/'"
+          />
+          
+     
+      </div>
+      
+    </section>
+  </div>
+      
+
+</div>
+<div class="container">
+  <div class="text">
+      <h2>Looking for a photographer?</h2>
+      <p>Immerse yourself in the mystical charm of Edinburgh's nights through my lens. As a passionate night photographer specializing in Edinburgh's nocturnal beauty, I aim to capture the city's hidden stories that unfold under the veil of darkness.</p>
+  </div>
+  <div class="small-pic">
+    <img src="{{ url_for('static', filename='images/Edinburgh.jpg') }}" alt="Mohamed Elbadry" />
+  </div>
+</div>
+
+
+    <section id="about">
+      <p class="section__text__p1">Who am I?</p>
+      <h1 class="title">Read about me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img
+              src="{{ url_for('static', filename='images/icon.png') }}" 
+                alt="Experience icon"
+                class="icon"
+              />
+              <h3>Experience!</h3>
+              <p>6+ years <br />pro photographer!<br />Wddings<br />portrait<br />urban<br />nature</p>
+            </div>
+            <div class="details-container">
+              <img
+              src="{{ url_for('static', filename='images/icon1.png') }}" 
+                alt="Travel icon"
+                class="icon"
+              />
+              <h3>Countries I photographed</h3>
+              <p>Scotland<br />Italy<br />England<br />Egypt</p> 
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              an Edinburgh-based photographer, I delve into the enigmatic world of night photography, tirelessly seeking to encapsulate the city's essence after dusk. With a lens as my guide, I strive to unravel the unseen beauty that emerges when the sun sets. Through my lens, I aim not just to capture moments but to weave tales of intrigue and allure, revealing the hidden narrative that only the night can unveil. Each click of the shutter is a pursuit of the extraordinary, a quest to freeze time and translate the ethereal into timeless visual poetry
+            </p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="{{ url_for('static', filename='images/arrow.png') }}" 
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#contact'"
+      />
+    </section>
+   
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <form action="/contact" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <div class="input-description">Please enter your name</div>
+    
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <div class="input-description">Please enter your email</div>
+    
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <div class="input-description">Please enter your message</div>
+    
+        <button type="submit">Submit</button>
+      </form>
+    
+
+
+      
+      
+        <div id="socials-container">
+          <img
+              src="{{ url_for('static', filename='images/instagram.png') }}"
+              alt="My Instagram profile"
+              class="icon"
+              onclick="location.href='https://www.instagram.com/itselbadry/'"
+          />
+          <img
+              src="{{ url_for('static', filename='images/facebook.png') }}"
+              alt="My Facebook profile"
+              class="icon"
+              onclick="location.href='https://facebook.com/'"
+          />
+          
+     
+      </div>
+      
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li> <a href="/">Home</a>
+              <li><a href="/portfolio">Portfolio</a></li>
+              <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#blog" onclick="toggleMenu()">Blog</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact me</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2023 Mohamed Elbadry. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
+
+  </body>
+</html>
